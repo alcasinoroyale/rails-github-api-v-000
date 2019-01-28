@@ -2,7 +2,8 @@
   <h1>Repos</h1>
 
   <% @repo_data.each do |r| %>
-  <%= link_to r["name"], "https://www.github.com/#{@user_data["login"]}/#{r["name"]}" %>
+  <li>
+  <%= link_to r["name"], "https://www.github.com/#{@user_data["login"]}/#{r["name"]}" %></li>
   <% end %>
 
   <%= @user_data["login"] %>
