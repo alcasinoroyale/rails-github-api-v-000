@@ -1,7 +1,7 @@
 <div class = "container">
   <h1>Repos</h1>
 
-  <% @repo_data.each dp |repo| %>
+  <% @repo_data.each do |repo| %>
   <%= link_to repo["name"], "https://www.github.com/#{@user_data["login"]}/#{repo}["name"]}" %>
   <% end %>
 
