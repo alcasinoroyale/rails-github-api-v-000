@@ -14,6 +14,13 @@ class RepositoriesController < ApplicationController
     end
 
       @repo_data = JSON.parse(repos.body)
-      
+  end
+
+  def create
+    user = Faraday.get 'https://api.github.com/user/repos' do |req|
+      req.headers['Authorization'] = 'token ' + session[:token]
+      req.headers['Accept'] = 'application/json'
+    end
+    redirect_to root_url
   end
 end
